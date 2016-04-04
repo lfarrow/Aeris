@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html ng-app="weatherApp" ng-controller="appController as appVm">
+<head>
+	<title>Aeris - {{appVm.title}}</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<script type="text/javascript" src="assets/js/angular.min.js"></script>
+	<script type="text/javascript" src="assets/js/ui-router.js"></script>
+	<script type="text/javascript" src="assets/js/angular-cookies.min.js"></script>
+	<script type="text/javascript" src="assets/js/compiled-app.js"></script>
+	
+	<link rel="stylesheet" type="text/css" href="assets/css/styles.css">
+	<link href='https://fonts.googleapis.com/css?family=Roboto:400,300|Lato|Rancho' rel='stylesheet' type='text/css'>
+
+	<link rel="icon" href="assets/img/favicon.ico" type="image/x-icon"/>
+	<link rel="shortcut icon" href="assets/img/favicon.ico" type="image/x-icon"/>
+</head>
+<body>
+	<div ng-show="appVm.loading == false"  ui-view class="view {{appVm.bodyClass}} {{appVm.dayNight}}"></div>
+	<div ng-hide="appVm.loading == false" class="loader-background {{appVm.dayNight}}">
+		<div class="loader-outer">		
+			<div class="loader">Loading...</div>
+		</div>		
+	</div>
+</body>
+</html>

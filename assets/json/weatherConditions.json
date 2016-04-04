@@ -1,0 +1,367 @@
+{
+   "200":{
+      "label":"Thunderstorm With Light Rain",
+      "day":"Z",
+      "night":"&"
+   },
+   "201":{
+      "label":"Thunderstorm With Rain",
+      "day":"Z",
+      "night":"&"
+   },
+   "202":{
+      "label":"Thunderstorm With Heavy Rain",
+      "day":"Z",
+      "night":"&"
+   },
+   "210":{
+      "label":"Light Thunderstorm",
+      "day":"O",
+      "night":"6"
+   },
+   "211":{
+      "label":"Thunderstorm",
+      "day":"O",
+      "night":"6"
+   },
+   "212":{
+      "label":"Heavy Thunderstorm",
+      "day":"Z",
+      "night":"&"
+   },
+   "221":{
+      "label":"Ragged Thunderstorm",
+      "day":"Z",
+      "night":"&"
+   },
+   "230":{
+      "label":"Thunderstorm With Light Drizzle",
+      "day":"O",
+      "night":"6"
+   },
+   "231":{
+      "label":"Thunderstorm With Drizzle",
+      "day":"O",
+      "night":"6"
+   },
+   "232":{
+      "label":"Thunderstorm With Heavy Drizzle",
+      "day":"O",
+      "night":"6"
+   },
+   "300":{
+      "label":"Light Intensity Drizzle",
+      "day":"Q",
+      "night":"7"
+   },
+   "301":{
+      "label":"Drizzle",
+      "day":"Q",
+      "night":"7"
+   },
+   "302":{
+      "label":"Heavy Intensity Drizzle",
+      "day":"Q",
+      "night":"7"
+   },
+   "310":{
+      "label":"Light Intensity Drizzle Rain",
+      "day":"Q",
+      "night":"7"
+   },
+   "311":{
+      "label":"Drizzle Rain",
+      "day":"Q",
+      "night":"7"
+   },
+   "312":{
+      "label":"Heavy Intensity Drizzle Rain",
+      "day":"Q",
+      "night":"7"
+   },
+   "313":{
+      "label":"Shower Rain And Drizzle",
+      "day":"Q",
+      "night":"7"
+   },
+   "314":{
+      "label":"Heavy Shower Rain And Drizzle",
+      "day":"R",
+      "night":"8"
+   },
+   "321":{
+      "label":"Shower Drizzle",
+      "day":"Q",
+      "night":"7"
+   },
+   "500":{
+      "label":"Light Rain",
+      "day":"Q",
+      "night":"7"
+   },
+   "501":{
+      "label":"Moderate Rain",
+      "day":"Q",
+      "night":"7"
+   },
+   "502":{
+      "label":"Heavy Intensity Rain",
+      "day":"R",
+      "night":"8"
+   },
+   "503":{
+      "label":"Very Heavy Rain",
+      "day":"R",
+      "night":"8"
+   },
+   "504":{
+      "label":"Extreme Rain",
+      "day":"R",
+      "night":"8"
+   },
+   "511":{
+      "label":"Freezing Rain",
+      "day":"R",
+      "night":"8"
+   },
+   "520":{
+      "label":"Light Intensity Shower Rain",
+      "day":"Q",
+      "night":"7"
+   },
+   "521":{
+      "label":"Shower Rain",
+      "day":"Q",
+      "night":"7"
+   },
+   "522":{
+      "label":"Heavy Intensity Shower Rain",
+      "day":"R",
+      "night":"8"
+   },
+   "531":{
+      "label":"Ragged Shower Rain",
+      "day":"Q",
+      "night":"7"
+   },
+   "600":{
+      "label":"Light Snow",
+      "day":"U",
+      "night":"\""
+   },
+   "601":{
+      "label":"Snow",
+      "day":"U",
+      "night":"\""
+   },
+   "602":{
+      "label":"Heavy Snow",
+      "day":"W",
+      "night":"#"
+   },
+   "611":{
+      "label":"Sleet",
+      "day":"Q",
+      "night":"7"
+   },
+   "612":{
+      "label":"Shower Sleet",
+      "day":"Q",
+      "night":"7"
+   },
+   "615":{
+      "label":"Light Rain And Snow",
+      "day":"Q",
+      "night":"7"
+   },
+   "616":{
+      "label":"Rain And Snow",
+      "day":"Q",
+      "night":"7"
+   },
+   "620":{
+      "label":"Light Shower Snow",
+      "day":"U",
+      "night":"\""
+   },
+   "621":{
+      "label":"Shower Snow",
+      "day":"U",
+      "night":"\""
+   },
+   "622":{
+      "label":"Heavy Shower Snow",
+      "day":"W",
+      "night":"#"
+   },
+   "701":{
+      "label":"Mist",
+      "day":"J",
+      "night":"K"
+   },
+   "711":{
+      "label":"Smoke",
+      "day":"J",
+      "night":"K"
+   },
+   "721":{
+      "label":"Haze",
+      "day":"J",
+      "night":"K"
+   },
+   "731":{
+      "label":"Sand, Dust Whirls",
+      "day":"F",
+      "night":"F"
+   },
+   "741":{
+      "label":"Fog",
+      "day":"M",
+      "night":"M"
+   },
+   "751":{
+      "label":"Sand",
+      "day":")",
+      "night":")"
+   },
+   "761":{
+      "label":"Dust",
+      "day":"F",
+      "night":"F"
+   },
+   "762":{
+      "label":"Volcanic Ash",
+      "day":")",
+      "night":")"
+   },
+   "771":{
+      "label":"Squalls",
+      "day":"F",
+      "night":"F"
+   },
+   "781":{
+      "label":"Tornado",
+      "day":"F",
+      "night":"F"
+   },
+   "800":{
+      "label":"Clear Sky",
+      "day":"B",
+      "night":"2"
+   },
+   "801":{
+      "label":"Few Clouds",
+      "day":"H",
+      "night":"4"
+   },
+   "802":{
+      "label":"Scattered Clouds",
+      "day":"H",
+      "night":"4"
+   },
+   "803":{
+      "label":"Broken Clouds",
+      "day":"H",
+      "night":"4"
+   },
+   "804":{
+      "label":"Overcast Clouds",
+      "day":"N",
+      "night":"5"
+   },
+   "900":{
+      "label":"Tornado",
+      "day":"F",
+      "night":"F"
+   },
+   "901":{
+      "label":"Tropical Storm",
+      "day":"F",
+      "night":"F"
+   },
+   "902":{
+      "label":"Hurricane",
+      "day":"F",
+      "night":"F"
+   },
+   "903":{
+      "label":"Cold",
+      "day":"G",
+      "night":"G"
+   },
+   "904":{
+      "label":"Hot",
+      "day":"'",
+      "night":"'"
+   },
+   "905":{
+      "label":"Windy",
+      "day":"F",
+      "night":"F"
+   },
+   "906":{
+      "label":"Hail",
+      "day":"X",
+      "night":"$"
+   },
+   "951":{
+      "label":"Calm",
+      "day":"B",
+      "night":"2"
+   },
+   "952":{
+      "label":"Light Breeze",
+      "day":"B",
+      "night":"2"
+   },
+   "953":{
+      "label":"Gentle Breeze",
+      "day":"B",
+      "night":"2"
+   },
+   "954":{
+      "label":"Moderate Breeze",
+      "day":"B",
+      "night":"2"
+   },
+   "955":{
+      "label":"Fresh Breeze",
+      "day":"B",
+      "night":"2"
+   },
+   "956":{
+      "label":"Strong Breeze",
+      "day":"B",
+      "night":"2"
+   },
+   "957":{
+      "label":"High Wind, Near Gale",
+      "day":"F",
+      "night":"F"
+   },
+   "958":{
+      "label":"Gale",
+      "day":"F",
+      "night":"F"
+   },
+   "959":{
+      "label":"Severe Gale",
+      "day":"F",
+      "night":"F"
+   },
+   "960":{
+      "label":"Storm",
+      "day":"O",
+      "night":"6"
+   },
+   "961":{
+      "label":"Violent Storm",
+      "day":"O",
+      "night":"6"
+   },
+   "962":{
+      "label":"Hurricane",
+      "day":"F",
+      "night":"F"
+   }
+}

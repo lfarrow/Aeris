@@ -1,0 +1,303 @@
+@font-face {
+  font-family: 'MeteoconsRegular';
+  src: url("../fonts/meteocons-webfont.eot");
+  src: url("../fonts/meteocons-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/meteocons-webfont.woff") format("woff"), url("../fonts/meteocons-webfont.ttf") format("truetype"), url("../fonts/meteocons-webfont.svg#MeteoconsRegular") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+
+.weather-icon:before {
+  font-family: 'MeteoconsRegular';
+  content: attr(data-icon); }
+
+* {
+  box-sizing: border-box; }
+
+html, body {
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #fff;
+  font-family: 'Lato', sans-serif; }
+
+a,
+a:visited,
+a:focus,
+a:hover,
+a:active,
+a:link {
+  color: inherit;
+  text-decoration: none; }
+
+.view {
+  color: #fff;
+  min-height: 100%;
+  padding: 70px 5px 5px 5px;
+  -webkit-transition: background-color 10s ease-in-out;
+  -moz-transition: background-color 10s ease-in-out;
+  -ms-transition: background-color 10s ease-in-out;
+  -o-transition: background-color 10s ease-in-out;
+  transition: background-color 10s ease-in-out;
+  background-color: #0F83E8; }
+  .view.day {
+    background-color: #0F83E8; }
+  .view.night {
+    background-color: #2D3B62; }
+  .view .header {
+    position: absolute;
+    -webkit-animation: none;
+    animation: none;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    z-index: 9999;
+    background-color: #fff;
+    -webkit-box-shadow: 0px 1px 4px 0px rgba(0, 0, 0, 0.35);
+    box-shadow: 0px 1px 4px 0px rgba(0, 0, 0, 0.35); }
+    .view .header .logo {
+      display: inline-block;
+      height: 50px;
+      margin: 5px 2px 5px 30px;
+      vertical-align: middle; }
+    .view .header .title {
+      display: inline-block;
+      font-family: 'Rancho', cursive;
+      font-size: 2rem;
+      margin: 0;
+      vertical-align: middle;
+      color: #2a2a2a; }
+
+.view > * {
+  -webkit-animation: fadeIn 0.75s 1 linear forwards;
+  animation: fadeIn 0.75s 1 linear forwards; }
+
+h1, h2, h3, h4 {
+  font-family: 'Roboto', sans-serif; }
+
+[ng-click] {
+  cursor: pointer; }
+
+.loader-background {
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  z-index: 999; }
+  .loader-background.day {
+    background-color: #0F83E8; }
+  .loader-background.night {
+    background-color: #2D3B62; }
+
+.loader-outer {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%); }
+
+.loader {
+  font-size: 0.2rem;
+  position: relative;
+  color: rgba(255, 255, 255, 0);
+  border-top: 1.1em solid rgba(255, 255, 255, 0.2);
+  border-right: 1.1em solid rgba(255, 255, 255, 0.2);
+  border-bottom: 1.1em solid rgba(255, 255, 255, 0.2);
+  border-left: 1.1em solid #ffffff;
+  -webkit-transform: translateZ(0);
+  -ms-transform: translateZ(0);
+  transform: translateZ(0);
+  -webkit-animation: load 1.1s infinite linear;
+  animation: load 1.1s infinite linear; }
+
+.loader, .loader:after {
+  border-radius: 50%;
+  width: 10em;
+  height: 10em; }
+
+@-webkit-keyframes load {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg); }
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg); } }
+
+@keyframes load {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg); }
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg); } }
+
+.home {
+  background-image: url("../img/backgrounds/rain.jpg");
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: top center;
+  display: block;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  flex-direction: row; }
+  .home .title-container {
+    -webkit-animation: none;
+    animation: none;
+    text-align: center;
+    max-height: 100%;
+    max-width: 100%; }
+    .home .title-container .logo {
+      opacity: 0;
+      width: 75%;
+      max-width: 500px;
+      -webkit-animation: fadeIn 1s 1 linear forwards;
+      animation: fadeIn 1s 1 linear forwards; }
+    .home .title-container .title {
+      opacity: 0;
+      font-family: 'Rancho', cursive;
+      font-weight: 700;
+      font-size: 5.5rem;
+      margin: 0;
+      color: #fff;
+      -webkit-animation: fadeIn 1s 1s 1 linear forwards;
+      animation: fadeIn 1s 1s 1 linear forwards; }
+    .home .title-container .slogan {
+      opacity: 0;
+      color: #fff;
+      margin: 0;
+      -webkit-animation: fadeIn 1s 1.5s 1 linear forwards;
+      animation: fadeIn 1s 1.5s 1 linear forwards; }
+    .home .title-container .button {
+      background-color: #75A313;
+      border: 1px solid #75A313;
+      margin: 1rem;
+      color: #fff;
+      opacity: 0;
+      -webkit-animation: fadeIn 1s 2.5s 1 linear forwards;
+      animation: fadeIn 1s 2.5s 1 linear forwards; }
+      .home .title-container .button img {
+        -webkit-animation: bounce 2s infinite linear;
+        animation: bounce 2s infinite linear; }
+
+@-webkit-keyframes fadeIn {
+  0% {
+    opacity: 0; }
+  100% {
+    opacity: 1; } }
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0; }
+  100% {
+    opacity: 1; } }
+
+.button {
+  display: inline-block;
+  padding: 0.5em 1em 0.5em 1em;
+  border-radius: 20px;
+  line-height: 1;
+  text-decoration: none; }
+  .button img {
+    height: 1rem;
+    display: inline;
+    vertical-align: bottom; }
+
+@-webkit-keyframes bounce {
+  0% {
+    transform: translate(0rem, 0);
+    -webkit-transform: translate(0rem, 0);
+    opacity: 0.25; }
+  50% {
+    transform: translate(0.2rem, 0);
+    -webkit-transform: translate(0.2rem, 0);
+    opacity: 1; }
+  100% {
+    transform: translate(0rem, 0);
+    -webkit-transform: translate(0rem, 0);
+    opacity: 0.25; } }
+
+@keyframes bounce {
+  0% {
+    transform: translate(0rem, 0);
+    opacity: 0.25; }
+  50% {
+    transform: translate(0.2rem, 0);
+    opacity: 1; }
+  100% {
+    transform: translate(0rem, 0);
+    opacity: 0.25; } }
+
+.location {
+  display: block;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  flex-direction: column; }
+  .location .search-container {
+    -webkit-animation: fadeIn 0.75s 1 linear forwards;
+    animation: fadeIn 0.75s 1 linear forwards;
+    display: block;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    flex-direction: row; }
+    .location .search-container .location-icon {
+      margin: 10px; }
+    .location .search-container .input-container {
+      text-align: center;
+      margin: 10px; }
+      .location .search-container .input-container .location-search {
+        display: block;
+        width: 100%;
+        padding: 10px 20px;
+        font-size: 1.5rem;
+        border: 0;
+        height: 60px;
+        border-radius: 30px; }
+        .location .search-container .input-container .location-search:focus {
+          outline: none; }
+  .location .results {
+    display: block;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    height: 200px;
+    width: 100%;
+    margin-top: 20px;
+    text-align: center; }
+    .location .results .result {
+      height: 40px;
+      margin: 0;
+      color: #fff;
+      font-size: 1.2rem;
+      -webkit-animation: fadeIn 0.5s 1 linear forwards;
+      animation: fadeIn 0.5s 1 linear forwards; }
+      .location .results .result img {
+        height: 1.2rem;
+        display: inline;
+        vertical-align: bottom; }
+
+.currentWeather .title {
+  text-align: center; }
+
+.currentWeather .weather-container {
+  width: 90%;
+  margin: 20px 5%; }
+  .currentWeather .weather-container .weather {
+    color: black;
+    padding: 10px;
+    background-color: #fff;
+    -webkit-box-shadow: 0px 1px 4px 0px rgba(0, 0, 0, 0.2);
+    box-shadow: 0px 1px 4px 0px rgba(0, 0, 0, 0.2); }
+    .currentWeather .weather-container .weather .weather-icon {
+      font-size: 4rem; }
+
+/* Larger than mobile */
+/* Widescreen tablets and monitors */

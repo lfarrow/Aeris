@@ -1,0 +1,117 @@
+.home {    
+    background-image: url("../img/backgrounds/rain.jpg");
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: top center;
+    @include flex;
+    @include flex-center;
+    flex-direction: row;
+    .title-container {
+        -webkit-animation: none;
+        animation: none;
+        text-align: center;
+        max-height: 100%;
+        max-width: 100%;
+        .logo {
+            opacity: 0;
+            width: 75%;
+            max-width: 500px;
+            -webkit-animation: fadeIn 1s 1 linear forwards;
+            animation: fadeIn 1s 1 linear forwards;          
+        }
+        .title {
+            opacity: 0;
+            font-family: 'Rancho', cursive;
+            font-weight: 700;
+            font-size: 5.5rem;
+            margin: 0;
+            color: #fff;
+            -webkit-animation: fadeIn 1s 1s 1 linear forwards;
+            animation: fadeIn 1s 1s 1 linear forwards; 
+        }
+        .slogan {
+            opacity: 0;
+            color: #fff;
+            margin: 0;
+            -webkit-animation: fadeIn 1s 1.5s 1 linear forwards;
+            animation: fadeIn 1s 1.5s 1 linear forwards; 
+        }
+        .button {
+            background-color: $green;
+            border: 1px solid $green;
+            margin: 1rem;
+            color: #fff;
+            opacity: 0;
+            -webkit-animation: fadeIn 1s 2.5s 1 linear forwards;
+            animation: fadeIn 1s 2.5s 1 linear forwards;
+            img {  
+                -webkit-animation: bounce 2s infinite linear;
+                animation: bounce 2s infinite linear; 
+            }
+        }
+    }
+}
+
+@-webkit-keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+.button {
+    display: inline-block;
+    padding: 0.5em 1em 0.5em 1em;
+    border-radius: 20px;
+    line-height: 1;
+    text-decoration: none;
+    img {
+        height: 1rem;
+        display: inline;
+        vertical-align: bottom;
+    }
+}
+
+@-webkit-keyframes bounce {
+    0% {
+        transform: translate(0rem, 0);
+        -webkit-transform: translate(0rem, 0);
+        opacity: 0.25;
+    }
+    50% {
+        transform: translate(0.2rem, 0);
+        -webkit-transform: translate(0.2rem, 0);
+        opacity: 1;
+    }
+    100% {
+        transform: translate(0rem, 0);
+        -webkit-transform: translate(0rem, 0);
+        opacity: 0.25;
+    }
+}
+
+@keyframes bounce {
+    0% {
+        transform: translate(0rem, 0);
+        opacity: 0.25;
+    }
+    50% {
+        transform: translate(0.2rem, 0);
+        opacity: 1;
+    }
+    100% {
+        transform: translate(0rem, 0);
+        opacity: 0.25;
+    }
+}

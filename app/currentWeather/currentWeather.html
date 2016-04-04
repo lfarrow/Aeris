@@ -1,0 +1,13 @@
+<div class="header">
+	<img class="logo" src="assets/img/logo-small.png"></img>
+	<h1 class="title">Aeris</h1>
+</div>
+<h1 class="title">{{currentWeatherVm.weather.name}}</h1>
+
+<div class="weather-container">
+	<h2>Current Weather</h2>
+	<p>Last Updated: {{currentWeatherVm.weather.timeUpdated}}</p>
+	<div class="weather">
+		<span class="weather-icon" data-icon="{{currentWeatherVm.weather.icon.icon}}" title="{{currentWeatherVm.weather.icon.label}}"></span>		
+	</div>
+</div>
