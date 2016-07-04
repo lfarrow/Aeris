@@ -11,9 +11,30 @@
             background-color: #fff;
             -webkit-box-shadow: 0px 1px 4px 0px rgba(0,0,0,0.2);
             box-shadow: 0px 1px 4px 0px rgba(0,0,0,0.2);
-            .weather-icon {
-                font-size: 4rem;
-            }
+            min-height: 90px;
+            div {
+                text-align: center;
+                .weather-icon {
+                    font-size: 4rem;
+                    display: inline-block;
+                    width: 100%;
+                    margin: 0;
+                }
+                .temperature {
+                    margin-left: 5px;
+                    margin-top: 5px;
+                    display: inline-block;
+                    font-size: 1.3rem;
+                    vertical-align: top;
+                    padding: 5px;
+                }                
+                &.current {
+                    border-right: 1px rgba(0,0,0,0.2) solid;
+                    h2, .time {
+                        margin: 0;
+                    }
+                }
+            }            
         }
     }
 }

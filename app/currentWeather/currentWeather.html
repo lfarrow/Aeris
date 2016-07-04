@@ -2,12 +2,31 @@
 	<img class="logo" src="assets/img/logo-small.png"></img>
 	<h1 class="title">Aeris</h1>
 </div>
-<h1 class="title">{{currentWeatherVm.weather.name}}</h1>
+<h2 class="title">Weather</h2>
 
 <div class="weather-container">
-	<h2>Current Weather</h2>
-	<p>Last Updated: {{currentWeatherVm.weather.timeUpdated}}</p>
-	<div class="weather">
-		<span class="weather-icon" data-icon="{{currentWeatherVm.weather.icon.icon}}" title="{{currentWeatherVm.weather.icon.label}}"></span>		
+	<div class="weather flex">
+		<div class="current flex-col-1">
+			<h2>{{currentWeatherVm.current.name}}</h2>
+			<p class="time">Last Updated: {{currentWeatherVm.current.timeUpdated}}</p>
+			<p class="weather-icon" data-icon="{{currentWeatherVm.current.icon.icon}}" title="{{currentWeatherVm.current.icon.label}}"></p>
+			<div class="temperature" ng-style="{'background-color': currentWeatherVm.current.tempColour}">{{currentWeatherVm.current.main.temp}}&deg;C</div>		
+		</div>
+		<div class="flex-col-1">
+			<p class="weather-icon" data-icon="{{currentWeatherVm.current.icon.icon}}" title="{{currentWeatherVm.current.icon.label}}"></p>
+			<div class="temperature" ng-style="{'background-color': currentWeatherVm.current.tempColour}">{{currentWeatherVm.current.main.temp}}&deg;C</div>		
+		</div>
+		<div class="flex-col-1">
+			<p class="weather-icon" data-icon="{{currentWeatherVm.current.icon.icon}}" title="{{currentWeatherVm.current.icon.label}}"></p>
+			<div class="temperature" ng-style="{'background-color': currentWeatherVm.current.tempColour}">{{currentWeatherVm.current.main.temp}}&deg;C</div>		
+		</div>
+		<div class="flex-col-1">
+			<p class="weather-icon" data-icon="{{currentWeatherVm.current.icon.icon}}" title="{{currentWeatherVm.current.icon.label}}"></p>
+			<div class="temperature" ng-style="{'background-color': currentWeatherVm.current.tempColour}">{{currentWeatherVm.current.main.temp}}&deg;C</div>		
+		</div>
+		<div class="flex-col-1">
+			<p class="weather-icon" data-icon="{{currentWeatherVm.current.icon.icon}}" title="{{currentWeatherVm.current.icon.label}}"></p>
+			<div class="temperature" ng-style="{'background-color': currentWeatherVm.current.tempColour}">{{currentWeatherVm.current.main.temp}}&deg;C</div>		
+		</div>
 	</div>
 </div>

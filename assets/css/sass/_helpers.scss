@@ -4,8 +4,26 @@
 	flex-wrap: wrap;
 }
 
+.flex {
+	display: block;
+	display:flex;
+	flex-wrap: wrap;
+}
+
 @mixin flex-center {
 	justify-content: center;
     align-content: center;
     align-items: center;
+}
+
+.flex-center {
+	justify-content: center;
+    align-content: center;
+    align-items: center;
+}
+
+@for $i from 1 through 4 {
+	.flex-col-#{$i} {
+	  flex: #{$i};
+	}
 }

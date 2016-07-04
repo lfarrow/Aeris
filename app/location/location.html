@@ -2,13 +2,13 @@
 	<img class="logo" src="assets/img/logo-small.png"></img>
 	<h1 class="title">Aeris</h1>
 </div>
-<div class="search-container">
+<div class="search-container flex flex-center">
 	<img src="assets/img/location.png" class="location-icon" alt="">
 	<div class="input-container">
 		<input type="text" class="location-search" placeholder="Enter your location..." ng-model="query" ng-init="query=''">
 	</div>
 </div>
-<div class="results" ng-show="query.length > 0">
+<div class="results flex" ng-show="query.length > 0">
 	<a class="result" href="#/location/{{city._id}}" ng-repeat="city in (filteredCities = (locationVm.cities | filter: query | orderBy: 'name' | limitTo: 5))">
 		{{city.name}} <img src="assets/img/arrow.png" alt="Arrow Icon">
 	</a>

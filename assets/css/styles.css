@@ -9,6 +9,28 @@
   font-family: 'MeteoconsRegular';
   content: attr(data-icon); }
 
+.flex {
+  display: block;
+  display: flex;
+  flex-wrap: wrap; }
+
+.flex-center {
+  justify-content: center;
+  align-content: center;
+  align-items: center; }
+
+.flex-col-1 {
+  flex: 1; }
+
+.flex-col-2 {
+  flex: 2; }
+
+.flex-col-3 {
+  flex: 3; }
+
+.flex-col-4 {
+  flex: 4; }
+
 * {
   box-sizing: border-box; }
 
@@ -240,14 +262,7 @@ h1, h2, h3, h4 {
   flex-direction: column; }
   .location .search-container {
     -webkit-animation: fadeIn 0.75s 1 linear forwards;
-    animation: fadeIn 0.75s 1 linear forwards;
-    display: block;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-content: center;
-    align-items: center;
-    flex-direction: row; }
+    animation: fadeIn 0.75s 1 linear forwards; }
     .location .search-container .location-icon {
       margin: 10px; }
     .location .search-container .input-container {
@@ -264,9 +279,6 @@ h1, h2, h3, h4 {
         .location .search-container .input-container .location-search:focus {
           outline: none; }
   .location .results {
-    display: block;
-    display: flex;
-    flex-wrap: wrap;
     flex-direction: column;
     height: 200px;
     width: 100%;
@@ -295,9 +307,26 @@ h1, h2, h3, h4 {
     padding: 10px;
     background-color: #fff;
     -webkit-box-shadow: 0px 1px 4px 0px rgba(0, 0, 0, 0.2);
-    box-shadow: 0px 1px 4px 0px rgba(0, 0, 0, 0.2); }
-    .currentWeather .weather-container .weather .weather-icon {
-      font-size: 4rem; }
+    box-shadow: 0px 1px 4px 0px rgba(0, 0, 0, 0.2);
+    min-height: 90px; }
+    .currentWeather .weather-container .weather div {
+      text-align: center; }
+      .currentWeather .weather-container .weather div .weather-icon {
+        font-size: 4rem;
+        display: inline-block;
+        width: 100%;
+        margin: 0; }
+      .currentWeather .weather-container .weather div .temperature {
+        margin-left: 5px;
+        margin-top: 5px;
+        display: inline-block;
+        font-size: 1.3rem;
+        vertical-align: top;
+        padding: 5px; }
+      .currentWeather .weather-container .weather div.current {
+        border-right: 1px rgba(0, 0, 0, 0.2) solid; }
+        .currentWeather .weather-container .weather div.current h2, .currentWeather .weather-container .weather div.current .time {
+          margin: 0; }
 
 /* Larger than mobile */
 /* Widescreen tablets and monitors */

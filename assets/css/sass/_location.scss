@@ -5,9 +5,6 @@
 	.search-container {
 		-webkit-animation: fadeIn 0.75s 1 linear forwards;
 		animation: fadeIn 0.75s 1 linear forwards;
-		@include flex;
-		@include flex-center;
-	    flex-direction: row;
 	    .location-icon {
 	    	margin: 10px;	
 	    }
@@ -29,7 +26,6 @@
     	}
 	}
 	.results {
-		@include flex;
 	    flex-direction: column;
 	    height: 200px;
 	    width: 100%;

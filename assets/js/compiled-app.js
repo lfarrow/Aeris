@@ -125,27 +125,31 @@
 		function currentWeatherController(loadingServices, $http, $scope, $stateParams, getWeatherServices, dateTimeServices, weatherFontCodeServices){
 			var currentWeatherVm = this;
 
-			currentWeatherVm.weather = {};
+			currentWeatherVm.current = {};
 			loadingServices.setLoading(true);
 
-			getWeatherServices.getCurrentWeather($stateParams.locationId)
-				.then(function(weather) {
-	              	console.warn(weather);
-	              	currentWeatherVm.weather = weather.data;
+			getWeatherServices.getCurrentWeather($stateParams.locationId).then(function(weather) {
+              	console.warn(weather.data);
+              	currentWeatherVm.current = weather.data;
 
-	              	//Replace unix date time format, with readable format
-	              	currentWeatherVm.weather.dt = dateTimeServices.convertFromUnix(currentWeatherVm.weather.dt);
-	              	currentWeatherVm.weather.timeUpdated = dateTimeServices.getHoursMinutes(currentWeatherVm.weather.dt);
-	              	currentWeatherVm.weather.sunrise = dateTimeServices.getHours(dateTimeServices.convertFromUnix(currentWeatherVm.weather.sys.sunrise));
-	              	currentWeatherVm.weather.sunset = dateTimeServices.getHours(dateTimeServices.convertFromUnix(currentWeatherVm.weather.sys.sunset));
-	              	
-	              	weatherFontCodeServices.getFontCharacter(currentWeatherVm.weather.weather[0].id, dateTimeServices.getHours(currentWeatherVm.weather.dt), currentWeatherVm.weather.sunrise, currentWeatherVm.weather.sunset).then(function(response){
-						loadingServices.setLoading(false);
-	              		currentWeatherVm.weather.icon = response;
-	              		console.log(currentWeatherVm.weather.icon);
-	              		console.log(dateTimeServices.getDayString(currentWeatherVm.weather.dt));
-	              	});
-	            });
+              	//Replace unix date time format, with readable format
+              	currentWeatherVm.current.dt = dateTimeServices.convertFromUnix(currentWeatherVm.current.dt);
+              	currentWeatherVm.current.timeUpdated = dateTimeServices.getHoursMinutes(currentWeatherVm.current.dt);
+              	currentWeatherVm.current.sunrise = dateTimeServices.getHours(dateTimeServices.convertFromUnix(currentWeatherVm.current.sys.sunrise));
+              	currentWeatherVm.current.sunset = dateTimeServices.getHours(dateTimeServices.convertFromUnix(currentWeatherVm.current.sys.sunset));
+
+              	
+              	weatherFontCodeServices.getFontCharacter(currentWeatherVm.current.weather[0].id, dateTimeServices.getHours(currentWeatherVm.current.dt), currentWeatherVm.current.sunrise, currentWeatherVm.current.sunset).then(function(response){
+              		currentWeatherVm.current.icon = response;
+              		currentWeatherVm.current.main.temp = Math.round(currentWeatherVm.current.main.temp);
+              		currentWeatherVm.current.tempColour = weatherFontCodeServices.getTemperatureColour(currentWeatherVm.current.main.temp).then(function(response){
+              			currentWeatherVm.current.tempColour = response;
+              		});
+					loadingServices.setLoading(false);
+              	});
+            });
+
+
 		}
 
 })();
@@ -337,6 +341,7 @@ angular.module('weatherApp.Services')
 .factory('weatherFontCodeServices', weatherFontCodeServices);
 	function weatherFontCodeServices($http, $q, dateTimeServices) {
 		var weatherConditions = {};
+		var temperatureColours = {};
 
 		function isEmpty(obj) {
 		    for(var prop in obj) {
@@ -347,15 +352,15 @@ angular.module('weatherApp.Services')
 		}
 
         function getFontCharacter(id, time, sunrise, sunset) {
-          time = Number(time);
-          sunrise = Number(sunrise);
-          sunset = Number(sunset);
-          
-          var dayNight = dateTimeServices.dayOrNight(time, sunrise, sunset);
-         
-          var def = $q.defer();
-          if(isEmpty(weatherConditions)) {
-              $http.get('assets/json/weatherConditions.json').then(function(response){
+			time = Number(time);
+			sunrise = Number(sunrise);
+			sunset = Number(sunset);
+
+			var dayNight = dateTimeServices.dayOrNight(time, sunrise, sunset);
+
+			var def = $q.defer();
+			if(isEmpty(weatherConditions)) {
+			  $http.get('assets/json/weatherConditions.json').then(function(response){
 					weatherConditions = response.data;
 					def.resolve(
 						{
@@ -363,7 +368,7 @@ angular.module('weatherApp.Services')
 							"label" : weatherConditions[id].label
 						}
 					);
-               });
+			   });
           }
           else {
               def.resolve(
@@ -377,7 +382,24 @@ angular.module('weatherApp.Services')
           return def.promise;            
       }
 
+      function getTemperatureColour(temperature) {
+      	temperature = Math.round(temperature);
+
+      	var def = $q.defer();
+		if(isEmpty(temperatureColours)) {
+		  $http.get('assets/json/temperatureColours.json').then(function(response){
+				temperatureColours = response.data;
+				def.resolve(temperatureColours[temperature]);
+		   });
+		}
+		else {
+		  def.resolve(temperatureColours[temperature]);
+		}
+		return def.promise;
+    }
+
         return {
-            getFontCharacter: getFontCharacter
+            getFontCharacter: getFontCharacter,
+            getTemperatureColour : getTemperatureColour
         }        
     }
